@@ -11,10 +11,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.compose.ui.unit.dp
+import coil.annotation.ExperimentalCoilApi
 import com.eneskayiklik.wallup.destinations.BookmarkScreenDestination
 import com.eneskayiklik.wallup.feature_home.domain.model.HomeEvent
-import com.eneskayiklik.wallup.ui.navigation.Destinations
 
+@ExperimentalCoilApi
 @ExperimentalAnimationApi
 @ExperimentalUnitApi
 @ExperimentalMaterialApi
@@ -23,6 +24,7 @@ fun LazyListScope.welcomeSection(onEvent: (HomeEvent) -> Unit) {
     item(key = "welcome_section") { WelcomeSection(onEvent) }
 }
 
+@ExperimentalCoilApi
 @ExperimentalUnitApi
 @ExperimentalAnimationApi
 @ExperimentalMaterialApi

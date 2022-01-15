@@ -3,7 +3,6 @@ package com.eneskayiklik.wallup.feature_splash.presentation
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
-import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -28,13 +27,10 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavGraphBuilder
 import coil.annotation.ExperimentalCoilApi
 import com.eneskayiklik.wallup.R
 import com.eneskayiklik.wallup.destinations.HomeScreenDestination
-import com.eneskayiklik.wallup.ui.navigation.Destinations
 import com.eneskayiklik.wallup.utils.const.UNSPLASH_URL
-import com.google.accompanist.navigation.animation.composable
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
@@ -55,9 +51,8 @@ fun SplashScreen(
         targetValue = if (isStarted) 1.2F else 1F,
         animationSpec = tween(durationMillis = 1500)
     ) {
+        navigator.popBackStack()
         navigator.navigate(HomeScreenDestination)
-        //popBackStack()
-        //onNavigate(Destinations.Home.route)
     }
     LaunchedEffect(key1 = true, block = { isStarted = true })
     Box(modifier = Modifier.fillMaxSize()) {
@@ -105,14 +100,5 @@ fun SplashScreen(
                 .align(Alignment.BottomCenter)
                 .padding(bottom = 15.dp)
         )
-    }
-}
-
-@ExperimentalAnimationApi
-fun NavGraphBuilder.splashScreen(popBackStack: () -> Unit, onNavigate: (String) -> Unit) {
-    composable(
-        Destinations.Splash.route,
-        exitTransition = { slideOutVertically(targetOffsetY = { -it }) }) {
-        //SplashScreen(onNavigate, popBackStack)
     }
 }

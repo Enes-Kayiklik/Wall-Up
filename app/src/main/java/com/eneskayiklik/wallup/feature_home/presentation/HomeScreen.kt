@@ -17,14 +17,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavGraphBuilder
 import coil.annotation.ExperimentalCoilApi
 import com.eneskayiklik.wallup.feature_home.domain.model.HomeEvent
-import com.eneskayiklik.wallup.feature_home.presentation.component.*
-import com.eneskayiklik.wallup.ui.navigation.Destinations
+import com.eneskayiklik.wallup.feature_home.presentation.component.categoriesSection
+import com.eneskayiklik.wallup.feature_home.presentation.component.colorSection
+import com.eneskayiklik.wallup.feature_home.presentation.component.suggestedSection
+import com.eneskayiklik.wallup.feature_home.presentation.component.welcomeSection
 import com.eneskayiklik.wallup.utils.broadcast_receiver.ShakeManager
 import com.eneskayiklik.wallup.utils.model.UiEvent
-import com.google.accompanist.navigation.animation.composable
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import kotlinx.coroutines.flow.collectLatest
@@ -64,15 +64,5 @@ fun HomeScreen(
         suggestedSection(state.randomPhotos, viewModel::onEvent)
         colorSection(state.colorList, viewModel::onEvent)
         categoriesSection(state.categories, viewModel::onEvent)
-    }
-}
-
-@ExperimentalFoundationApi
-@ExperimentalAnimationApi
-@ExperimentalMaterialApi
-@ExperimentalCoilApi
-fun NavGraphBuilder.homeScreen(onNavigate: (String) -> Unit) {
-    composable(Destinations.Home.route) {
-        //HomeScreen(onNavigate)
     }
 }

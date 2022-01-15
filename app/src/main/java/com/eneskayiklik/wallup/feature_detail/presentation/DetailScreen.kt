@@ -2,7 +2,8 @@ package com.eneskayiklik.wallup.feature_detail.presentation
 
 import android.app.DownloadManager
 import android.widget.Toast
-import androidx.compose.animation.*
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.PaddingValues
@@ -14,24 +15,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavType
-import androidx.navigation.navArgument
 import coil.annotation.ExperimentalCoilApi
 import com.eneskayiklik.wallup.feature_detail.domain.model.DetailScreenNavArgs
 import com.eneskayiklik.wallup.feature_detail.presentation.component.imageInfoItem
 import com.eneskayiklik.wallup.feature_detail.presentation.component.imageItem
-import com.eneskayiklik.wallup.ui.navigation.Destinations
 import com.eneskayiklik.wallup.utils.broadcast_receiver.SystemBroadcastReceiver
 import com.eneskayiklik.wallup.utils.model.UiEvent
-import com.google.accompanist.navigation.animation.composable
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import kotlinx.coroutines.flow.collectLatest
@@ -86,25 +81,5 @@ fun DetailScreen(
         if (detailState.imageDetail != null) {
             imageInfoItem(detailState, viewModel::onEvent)
         }
-    }
-}
-
-@ExperimentalUnitApi
-@ExperimentalComposeUiApi
-@ExperimentalCoilApi
-@ExperimentalFoundationApi
-@ExperimentalAnimationApi
-@ExperimentalMaterialApi
-fun NavGraphBuilder.detailScreen(onPopBack: () -> Unit, onNavigate: (String) -> Unit) {
-    composable(
-        Destinations.DetailWithArgs.route, arguments = listOf(
-            navArgument("id") { defaultValue = "" },
-            navArgument("thumbnail") {
-                defaultValue = null; nullable = true; type = NavType.StringType
-            },
-        ), enterTransition = { scaleIn(initialScale = .7F) + fadeIn(initialAlpha = .5F) },
-        exitTransition = { scaleOut(targetScale = .7F) + fadeOut(targetAlpha = .5F) }
-    ) {
-        //DetailScreen(onNavigate, onPopBack)
     }
 }

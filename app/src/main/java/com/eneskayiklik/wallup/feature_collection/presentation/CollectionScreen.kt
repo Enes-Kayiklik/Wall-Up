@@ -1,7 +1,7 @@
 package com.eneskayiklik.wallup.feature_collection.presentation
 
 
-import androidx.compose.animation.*
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -18,15 +18,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavType
-import androidx.navigation.navArgument
 import coil.annotation.ExperimentalCoilApi
 import com.eneskayiklik.wallup.feature_collection.domain.model.CollectionScreenNavArgs
 import com.eneskayiklik.wallup.feature_collection.presentation.component.itemsSection
 import com.eneskayiklik.wallup.feature_collection.presentation.component.titleSection
-import com.eneskayiklik.wallup.ui.navigation.Destinations
-import com.google.accompanist.navigation.animation.composable
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
@@ -55,26 +50,5 @@ fun CollectionScreen(
     ) {
         titleSection(state.title, state.count, modifier = Modifier.padding(horizontal = 16.dp))
         itemsSection(state.items, navigator)
-    }
-}
-
-@ExperimentalFoundationApi
-@ExperimentalAnimationApi
-@ExperimentalMaterialApi
-@ExperimentalCoilApi
-fun NavGraphBuilder.collectionScreen(onNavigate: (String) -> Unit) {
-    composable(Destinations.CollectionWithArgs.route, arguments = listOf(
-        navArgument("collectionId") {
-            defaultValue = null; nullable = true; type = NavType.StringType
-        },
-        navArgument("title") {
-            defaultValue = null; nullable = true; type = NavType.StringType
-        },
-        navArgument("searchQuery") {
-            defaultValue = null; nullable = true; type = NavType.StringType
-        },
-    ), enterTransition = { scaleIn(initialScale = .7F) + fadeIn(initialAlpha = .5F) },
-        exitTransition = { scaleOut(targetScale = .7F) + fadeOut(targetAlpha = .5F) }) {
-        //CollectionScreen(onNavigate)
     }
 }
