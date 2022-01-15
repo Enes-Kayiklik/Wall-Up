@@ -4,7 +4,10 @@ package com.eneskayiklik.wallup.feature_collection.presentation
 import androidx.compose.animation.*
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.ExperimentalMaterialApi
@@ -12,6 +15,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavGraphBuilder
@@ -26,6 +30,8 @@ import com.google.accompanist.navigation.animation.composable
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
+@ExperimentalAnimationApi
+@ExperimentalUnitApi
 @Destination(
     navArgsDelegate = CollectionScreenNavArgs::class
 )
@@ -40,7 +46,9 @@ fun CollectionScreen(
     val state = viewModel.collectionState.collectAsState().value
     val scrollState = rememberLazyListState()
     LazyColumn(
-        modifier = Modifier.fillMaxSize().background(MaterialTheme.colors.background),
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colors.background),
         contentPadding = PaddingValues(top = 60.dp, bottom = 16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
         state = scrollState

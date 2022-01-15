@@ -1,11 +1,14 @@
 package com.eneskayiklik.wallup.feature_collection.presentation.component
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.spring
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ExperimentalMaterialApi
@@ -14,17 +17,20 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.*
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
+import com.eneskayiklik.wallup.destinations.DetailScreenDestination
 import com.eneskayiklik.wallup.feature_home.domain.model.UnsplashPhoto
-import com.eneskayiklik.wallup.ui.navigation.Destinations
 import com.eneskayiklik.wallup.utils.extensions.gridItems
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
 
+@ExperimentalUnitApi
+@ExperimentalAnimationApi
 @ExperimentalCoilApi
 @ExperimentalMaterialApi
 @ExperimentalFoundationApi
@@ -42,6 +48,9 @@ fun LazyListScope.itemsSection(
     }
 }
 
+@ExperimentalAnimationApi
+@ExperimentalUnitApi
+@ExperimentalFoundationApi
 @ExperimentalCoilApi
 @ExperimentalMaterialApi
 @Composable
@@ -61,7 +70,7 @@ private fun SingleSearchResultItem(data: UnsplashPhoto, navigator: DestinationsN
         onClick = {
             isClicked = isClicked.not()
             val encodedUrl = URLEncoder.encode(data.smallImage, StandardCharsets.UTF_8.toString())
-            //onClick("${Destinations.Detail.route}/${data.id}?thumbnail=${encodedUrl}")
+            navigator.navigate(DetailScreenDestination(id = data.id, thumbnail = encodedUrl))
         },
         elevation = 2.dp,
         color = Color(android.graphics.Color.parseColor(data.color)),
