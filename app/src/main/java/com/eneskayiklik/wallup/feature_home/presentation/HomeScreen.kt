@@ -23,6 +23,7 @@ import com.eneskayiklik.wallup.feature_home.presentation.component.categoriesSec
 import com.eneskayiklik.wallup.feature_home.presentation.component.colorSection
 import com.eneskayiklik.wallup.feature_home.presentation.component.suggestedSection
 import com.eneskayiklik.wallup.feature_home.presentation.component.welcomeSection
+import com.eneskayiklik.wallup.ui.animation.ScreensAnim
 import com.eneskayiklik.wallup.utils.broadcast_receiver.ShakeManager
 import com.eneskayiklik.wallup.utils.model.UiEvent
 import com.ramcosta.composedestinations.annotation.Destination
@@ -31,7 +32,9 @@ import kotlinx.coroutines.flow.collectLatest
 
 @ExperimentalUnitApi
 @ExperimentalAnimationApi
-@Destination
+@Destination(
+    style = ScreensAnim::class
+)
 @ExperimentalFoundationApi
 @ExperimentalMaterialApi
 @ExperimentalCoilApi

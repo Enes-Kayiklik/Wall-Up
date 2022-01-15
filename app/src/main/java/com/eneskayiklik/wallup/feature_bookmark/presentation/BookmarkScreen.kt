@@ -22,12 +22,15 @@ import coil.annotation.ExperimentalCoilApi
 import com.eneskayiklik.wallup.feature_bookmark.presentation.component.EmptyBookmarkSection
 import com.eneskayiklik.wallup.feature_bookmark.presentation.component.bookmarkSection
 import com.eneskayiklik.wallup.feature_collection.presentation.component.titleSection
+import com.eneskayiklik.wallup.ui.animation.ScreensAnim
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
 @ExperimentalAnimationApi
 @ExperimentalUnitApi
-@Destination
+@Destination(
+    style = ScreensAnim::class
+)
 @ExperimentalFoundationApi
 @ExperimentalMaterialApi
 @ExperimentalCoilApi

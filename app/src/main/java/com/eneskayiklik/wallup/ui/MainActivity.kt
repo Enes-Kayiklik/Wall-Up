@@ -11,7 +11,9 @@ import androidx.compose.ui.unit.ExperimentalUnitApi
 import coil.annotation.ExperimentalCoilApi
 import com.eneskayiklik.wallup.NavGraphs
 import com.eneskayiklik.wallup.ui.theme.WallUpTheme
+import com.google.accompanist.navigation.material.ExperimentalMaterialNavigationApi
 import com.ramcosta.composedestinations.DestinationsNavHost
+import com.ramcosta.composedestinations.animations.rememberAnimatedNavHostEngine
 import dagger.hilt.android.AndroidEntryPoint
 
 @ExperimentalAnimationApi
@@ -21,12 +23,16 @@ import dagger.hilt.android.AndroidEntryPoint
 @ExperimentalMaterialApi
 @ExperimentalComposeUiApi
 @ExperimentalUnitApi
+@ExperimentalMaterialNavigationApi
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             WallUpTheme {
-                DestinationsNavHost(navGraph = NavGraphs.root)
+                DestinationsNavHost(
+                    navGraph = NavGraphs.root,
+                    engine = rememberAnimatedNavHostEngine()
+                )
             }
         }
     }

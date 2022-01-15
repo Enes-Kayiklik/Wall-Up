@@ -25,6 +25,7 @@ import coil.annotation.ExperimentalCoilApi
 import com.eneskayiklik.wallup.feature_detail.domain.model.DetailScreenNavArgs
 import com.eneskayiklik.wallup.feature_detail.presentation.component.imageInfoItem
 import com.eneskayiklik.wallup.feature_detail.presentation.component.imageItem
+import com.eneskayiklik.wallup.ui.animation.ScreensAnim
 import com.eneskayiklik.wallup.utils.broadcast_receiver.SystemBroadcastReceiver
 import com.eneskayiklik.wallup.utils.model.UiEvent
 import com.ramcosta.composedestinations.annotation.Destination
@@ -33,7 +34,8 @@ import kotlinx.coroutines.flow.collectLatest
 
 @ExperimentalFoundationApi
 @Destination(
-    navArgsDelegate = DetailScreenNavArgs::class
+    navArgsDelegate = DetailScreenNavArgs::class,
+    style = ScreensAnim::class
 )
 @ExperimentalUnitApi
 @ExperimentalAnimationApi

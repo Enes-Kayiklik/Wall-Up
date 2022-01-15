@@ -22,13 +22,15 @@ import coil.annotation.ExperimentalCoilApi
 import com.eneskayiklik.wallup.feature_collection.domain.model.CollectionScreenNavArgs
 import com.eneskayiklik.wallup.feature_collection.presentation.component.itemsSection
 import com.eneskayiklik.wallup.feature_collection.presentation.component.titleSection
+import com.eneskayiklik.wallup.ui.animation.ScreensAnim
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 
 @ExperimentalAnimationApi
 @ExperimentalUnitApi
 @Destination(
-    navArgsDelegate = CollectionScreenNavArgs::class
+    navArgsDelegate = CollectionScreenNavArgs::class,
+    style = ScreensAnim::class
 )
 @ExperimentalFoundationApi
 @ExperimentalMaterialApi
