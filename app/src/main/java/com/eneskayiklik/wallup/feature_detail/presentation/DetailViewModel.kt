@@ -8,11 +8,14 @@ import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.util.Log
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import coil.annotation.ExperimentalCoilApi
 import com.eneskayiklik.wallup.destinations.CollectionScreenDestination
 import com.eneskayiklik.wallup.feature_bookmark.data.db.entity.BookmarkPhoto
 import com.eneskayiklik.wallup.feature_detail.domain.model.DetailEvent
@@ -27,7 +30,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
-import java.lang.Exception
 import java.net.URLDecoder
 import java.nio.charset.StandardCharsets
 import javax.inject.Inject
@@ -55,6 +57,9 @@ class DetailViewModel @Inject constructor(
         )
     }
 
+    @ExperimentalCoilApi
+    @ExperimentalUnitApi
+    @ExperimentalAnimationApi
     @ExperimentalMaterialApi
     @ExperimentalFoundationApi
     fun onEvent(event: DetailEvent) {
@@ -157,7 +162,6 @@ class DetailViewModel @Inject constructor(
     fun downloadComplete() {
         viewModelScope.launch {
             if (mDownloadId != null) {
-                val uri = downloadManager.getUriForDownloadedFile(mDownloadId!!)
                 mDownloadId = null
                 _detailState.value = _detailState.value.copy(
                     currentDownloadId = null

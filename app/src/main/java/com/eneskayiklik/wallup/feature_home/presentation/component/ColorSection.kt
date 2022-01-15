@@ -1,5 +1,6 @@
 package com.eneskayiklik.wallup.feature_home.presentation.component
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyItemScope
@@ -8,9 +9,10 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Surface
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
 import com.eneskayiklik.wallup.destinations.CollectionScreenDestination
@@ -18,6 +20,8 @@ import com.eneskayiklik.wallup.feature_home.domain.model.ColorItem
 import com.eneskayiklik.wallup.feature_home.domain.model.HomeEvent
 import com.ramcosta.composedestinations.spec.Direction
 
+@ExperimentalUnitApi
+@ExperimentalAnimationApi
 @ExperimentalCoilApi
 @ExperimentalMaterialApi
 @ExperimentalFoundationApi
@@ -29,6 +33,8 @@ fun LazyListScope.colorSection(colors: List<ColorItem>, onEvent: (HomeEvent) -> 
     }
 }
 
+@ExperimentalAnimationApi
+@ExperimentalUnitApi
 @ExperimentalCoilApi
 @ExperimentalMaterialApi
 @ExperimentalFoundationApi
@@ -56,6 +62,8 @@ private fun LazyItemScope.ColorSection(
     }
 }
 
+@ExperimentalUnitApi
+@ExperimentalAnimationApi
 @ExperimentalCoilApi
 @ExperimentalFoundationApi
 @ExperimentalMaterialApi

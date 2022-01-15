@@ -51,7 +51,7 @@ fun SplashScreen(
         targetValue = if (isStarted) 1.2F else 1F,
         animationSpec = tween(durationMillis = 1500)
     ) {
-        navigator.popBackStack()
+        //navigator.popBackStack()
         navigator.navigate(HomeScreenDestination)
     }
     LaunchedEffect(key1 = true, block = { isStarted = true })

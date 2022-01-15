@@ -1,5 +1,6 @@
 package com.eneskayiklik.wallup.feature_home.presentation.component
 
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -14,8 +15,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.*
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
 import com.eneskayiklik.wallup.destinations.CollectionScreenDestination
@@ -24,6 +26,8 @@ import com.eneskayiklik.wallup.feature_home.domain.model.HomeEvent
 import com.eneskayiklik.wallup.utils.extensions.gridItems
 import com.ramcosta.composedestinations.spec.Direction
 
+@ExperimentalAnimationApi
+@ExperimentalUnitApi
 @ExperimentalCoilApi
 @ExperimentalMaterialApi
 @ExperimentalFoundationApi
@@ -50,6 +54,8 @@ fun LazyListScope.categoriesSection(
     }
 }
 
+@ExperimentalUnitApi
+@ExperimentalAnimationApi
 @ExperimentalCoilApi
 @ExperimentalFoundationApi
 @ExperimentalMaterialApi
