@@ -10,7 +10,7 @@ by [Enes](https://github.com/Enes-Kayiklik)*
 for [Wallpaper App UI Design](https://dribbble.com/shots/14808564-Wallpaper-app)***
 
 ## Screens 🖼
-<table style="width:100%">
+<table style="width:60%">
   <tr>
     <th>Home Screen</th>
     <th>Detail Screen</th>
