@@ -10,12 +10,27 @@ by [Enes](https://github.com/Enes-Kayiklik)*
 for [Wallpaper App UI Design](https://dribbble.com/shots/14808564-Wallpaper-app)***
 
 ## Screens 🖼
+<table style="width:100%">
+  <tr>
+    <th>Home Screen</th>
+    <th>Detail Screen</th>
+  </tr>
+  <tr>
+    <td><img src="screenshots/home_screen.jpg"/></td>
+    <td><img src="screenshots/detail_screen.jpg"/></td>
+  </tr>
+</table>
 
-Home | Detail | Bookmark | Collection --- | --- | --- |
-![](https://github.com/Enes-Kayiklik/Wall-Up/blob/master/screenshots/home_screen.jpg)
-| ![](https://github.com/Enes-Kayiklik/Wall-Up/blob/master/screenshots/detail_screen.jpg)
-| ![](https://github.com/Enes-Kayiklik/Wall-Up/blob/master/screenshots/bookmark_screen.jpg)
-| ![](https://github.com/Enes-Kayiklik/Wall-Up/blob/master/screenshots/collection_screen.jpg)
+<table style="width:100%">
+  <tr>
+    <th>Bookmark Screen</th>
+    <th>Collection Screen</th>
+  </tr>
+  <tr>
+    <td><img src="screenshots/bookmark_screen.jpg"/></td>
+    <td><img src="screenshots/collection_screen.jpg"/></td>
+  </tr>
+</table>
 
 ## Prerequisites
 
