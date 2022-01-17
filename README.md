@@ -39,7 +39,7 @@ for [Wallpaper App UI Design](https://dribbble.com/shots/14808564-Wallpaper-app)
 To run the application, an API key from [Unsplash](https://unsplash.com/developers) should be
 supplied.
 
-inside local.properties file add this line and Rebuild project.
+inside **local.properties** file add this line and Rebuild project.
 `` apiKey="Your API Key Here" ``
 
 How to store API key? - [Stackoverflow](https://stackoverflow.com/a/70244128/13447094)
