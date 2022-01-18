@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.sp
 import coil.annotation.ExperimentalCoilApi
 import com.eneskayiklik.wallup.R
 import com.eneskayiklik.wallup.destinations.HomeScreenDestination
+import com.eneskayiklik.wallup.destinations.SplashScreenDestination
 import com.eneskayiklik.wallup.utils.const.UNSPLASH_URL
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
@@ -51,8 +52,11 @@ fun SplashScreen(
         targetValue = if (isStarted) 1.2F else 1F,
         animationSpec = tween(durationMillis = 1500)
     ) {
-        //navigator.popBackStack()
-        navigator.navigate(HomeScreenDestination)
+        navigator.navigate(HomeScreenDestination) {
+            popUpTo(SplashScreenDestination.route) {
+                inclusive = true
+            }
+        }
     }
     LaunchedEffect(key1 = true, block = { isStarted = true })
     Box(modifier = Modifier.fillMaxSize()) {
