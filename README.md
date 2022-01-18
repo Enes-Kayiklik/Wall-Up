@@ -1,4 +1,4 @@
-# WallUp ⛰
+# WallUp 🏞️
 
 Wallpaper finder and downloader app Demonstrate the Jetpack Compose UI
 using [Unsplash](https://unsplash.com/developers) API *Made with ❤️
@@ -44,7 +44,7 @@ inside **local.properties** file add this line and Rebuild project.
 
 How to store API key? - [Stackoverflow](https://stackoverflow.com/a/70244128/13447094)
 
-## Architecture 🧰
+## Architecture 🗼
 
 - Single Activity No Fragment
 - MVVM Pattern
@@ -63,7 +63,7 @@ check [Guide to app architecture](https://developer.android.com/jetpack/guide?gc
 
 <img src="/screenshots/architecture_diagram.png" width="500">
 
-## Libraries 🛠
+## Libraries 📚
 
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android
   development.
