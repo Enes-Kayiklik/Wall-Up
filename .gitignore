@@ -1,4 +1,8 @@
 *.iml
+*.apk
+*.aar
+*.ap_
+*.aab
 .gradle
 /local.properties
 /.idea/caches
@@ -14,4 +18,5 @@
 .cxx
 local.properties
 key_store
-private_key.pepk
+*.keystore
+*.pepk
