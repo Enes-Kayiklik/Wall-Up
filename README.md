@@ -4,12 +4,15 @@ Wallpaper finder and downloader app Demonstrate the Jetpack Compose UI
 using [Unsplash](https://unsplash.com/developers) API *Made with ❤️
 by [Enes](https://github.com/Enes-Kayiklik)*
 
+<a href='https://play.google.com/store/apps/details?id=com.eneskayiklik.wallup'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height=90px/></a>
+
 ## UI Design 🎨
 
 ***Thanks to [Rian Hamidjoyo](https://dribbble.com/rseth)
 for [Wallpaper App UI Design](https://dribbble.com/shots/14808564-Wallpaper-app)***
 
 ## Screens 🖼
+
 <table style="width:60%">
   <tr>
     <th>Home Screen</th>
