@@ -1,3 +1,5 @@
+![GitHub Cards Preview](https://github.com/Enes-Kayiklik/Wall-Up/blob/master/screenshots/cover_photo.png?raw=true)
+
 # WallUp 🏞️
 
 Wallpaper finder and downloader app Demonstrate the Jetpack Compose UI
