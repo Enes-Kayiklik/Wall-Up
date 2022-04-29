@@ -10,6 +10,7 @@ import com.eneskayiklik.wallup.utils.network.HttpParam
 import com.eneskayiklik.wallup.utils.network.HttpRoutes
 import com.eneskayiklik.wallup.utils.network.Resource
 import io.ktor.client.*
+import io.ktor.client.features.*
 import io.ktor.client.request.*
 import javax.inject.Inject
 
@@ -25,6 +26,10 @@ class HomeRepositoryImpl @Inject constructor(
                 parameter(HttpParam.COUNT, 10)
             }
             Resource.Success(data)
+        } catch (e: HttpRequestTimeoutException) {
+            Resource.Error("Timeout")
+        } catch (e: SendCountExceedException) {
+            Resource.Error("Too Many Request")
         } catch (e: Exception) {
             Resource.Error("An error occurred")
         }
